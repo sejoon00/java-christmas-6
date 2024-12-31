@@ -6,7 +6,7 @@ import java.util.Arrays;
 public enum MenuItem {
 
     양송이스프(6_000, "양송이스프", MenuCategory.Appetizers),
-    타파스(5_000, "타파스", MenuCategory.Appetizers),
+    타파스(5_500, "타파스", MenuCategory.Appetizers),
     시저샐러드(8_000, "시저샐러드", MenuCategory.Appetizers),
     티본스테이크(55_000, "티본스테이크", MenuCategory.MainDishes),
     바비큐립(54_000, "바비큐립", MenuCategory.MainDishes),

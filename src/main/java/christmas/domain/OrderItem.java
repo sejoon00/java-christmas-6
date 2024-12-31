@@ -23,6 +23,10 @@ public class OrderItem {
         return orderCount;
     }
 
+    public int getPrice() {
+        return menuItem.getPrice();
+    }
+
     private String[] splitInput(String input) {
         String[] split = input.split(DELIMITER);
         if (split.length != 2) {

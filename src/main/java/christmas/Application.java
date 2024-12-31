@@ -12,10 +12,10 @@ public class Application {
 
         try (InputView inputView = new InputView()) {
             Calender calender = inputView.inputDate();
-            System.out.println(calender.getDayOfWeek());
             Menu menu = inputView.inputMenu();
             OutputView.printEventMessage(calender);
             OutputView.printOrderMenu(menu);
+            OutputView.printTotalPrice(menu);
         }
 
     }

@@ -19,6 +19,12 @@ public class Menu {
         return orderItems;
     }
 
+    public int calculateTotalPrice() {
+        return orderItems.stream()
+                .mapToInt(OrderItem::getPrice)
+                .sum();
+    }
+
     private List<OrderItem> createMenuItems(String menuInputs) {
         List<OrderItem> orderItems = Arrays.stream(menuInputs.split(DELIMITER))
                 .map(OrderItem::new)

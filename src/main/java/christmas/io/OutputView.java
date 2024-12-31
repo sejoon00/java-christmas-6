@@ -3,6 +3,7 @@ package christmas.io;
 import christmas.domain.Calender;
 import christmas.domain.Menu;
 import christmas.domain.OrderItem;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -23,5 +24,13 @@ public class OutputView {
         orderItems.forEach(
                 orderItem -> System.out.println(orderItem.getName() + " " + orderItem.getOrderCount() + "개")
         );
+        System.out.println();
+    }
+
+    public static void printTotalPrice(Menu menu) {
+        int totalPrice = menu.calculateTotalPrice();
+        DecimalFormat df = new DecimalFormat("###,###");
+        System.out.println("<할인 전 총주문 금액>");
+        System.out.println(df.format(totalPrice) + "원\n");
     }
 }
