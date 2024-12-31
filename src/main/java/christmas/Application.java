@@ -1,7 +1,18 @@
 package christmas;
 
+import christmas.domain.Calender;
+import christmas.io.InputView;
+import christmas.io.OutputView;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+
+        OutputView.printWelcomeMessage();
+
+        try (InputView inputView = new InputView()) {
+            Calender calender = inputView.inputDate();
+            System.out.println(calender.getDayOfWeek());
+        }
+
     }
 }
