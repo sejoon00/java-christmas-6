@@ -1,5 +1,6 @@
 package christmas;
 
+import christmas.domain.benefit.Benefits;
 import christmas.domain.Calender;
 import christmas.domain.Menu;
 import christmas.io.InputView;
@@ -16,6 +17,8 @@ public class Application {
             OutputView.printEventMessage(calender);
             OutputView.printOrderMenu(menu);
             OutputView.printTotalPrice(menu);
+            Benefits benefits = new Benefits(calender, menu);
+            OutputView.printBenefit(menu, benefits);
         }
 
     }

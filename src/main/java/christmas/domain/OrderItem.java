@@ -24,7 +24,15 @@ public class OrderItem {
     }
 
     public int getPrice() {
-        return menuItem.getPrice();
+        return menuItem.getPrice() * orderCount;
+    }
+
+    public boolean isDessert() {
+        return menuItem.getCategory().equals(MenuCategory.Desserts);
+    }
+
+    public boolean isMainDish() {
+        return menuItem.getCategory().equals(MenuCategory.MainDishes);
     }
 
     private String[] splitInput(String input) {
