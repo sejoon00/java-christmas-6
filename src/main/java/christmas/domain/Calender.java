@@ -33,6 +33,10 @@ public class Calender {
         }
     }
 
+    public LocalDate getDate() {
+        return this.date;
+    }
+
     public DayOfWeek getDayOfWeek() {
         return date.getDayOfWeek();
     }

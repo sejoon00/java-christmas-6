@@ -18,7 +18,7 @@ class CalenderTest {
     @ParameterizedTest(name = "[{index}] Invalid date input: {0}")
     @ValueSource(strings = { "32", "0", "-1", "abc", "2023-02-30", "99" })
     void 날짜출력_실패(String input) {
-        assertThrows(IllegalArgumentException.class, () -> new Calender("32"));
+        assertThrows(IllegalArgumentException.class, () -> new Calender(input));
     }
 
 }

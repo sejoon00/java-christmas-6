@@ -1,6 +1,7 @@
 package christmas;
 
 import christmas.domain.Calender;
+import christmas.domain.Menu;
 import christmas.io.InputView;
 import christmas.io.OutputView;
 
@@ -12,6 +13,9 @@ public class Application {
         try (InputView inputView = new InputView()) {
             Calender calender = inputView.inputDate();
             System.out.println(calender.getDayOfWeek());
+            Menu menu = inputView.inputMenu();
+            OutputView.printEventMessage(calender);
+            OutputView.printOrderMenu(menu);
         }
 
     }
