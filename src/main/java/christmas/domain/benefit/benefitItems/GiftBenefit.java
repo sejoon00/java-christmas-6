@@ -1,7 +1,8 @@
-package christmas.domain.benefit;
+package christmas.domain.benefit.benefitItems;
 
 import christmas.domain.Calender;
 import christmas.domain.Menu;
+import christmas.domain.benefit.BenefitCategory;
 
 public class GiftBenefit extends BenefitItem {
 

@@ -2,6 +2,7 @@ package christmas.domain.benefit;
 
 import christmas.domain.Calender;
 import christmas.domain.Menu;
+import christmas.domain.benefit.benefitItems.BenefitItem;
 import java.util.List;
 
 public class Benefits {

@@ -1,8 +1,9 @@
-package christmas.domain.benefit;
+package christmas.domain.benefit.benefitItems;
 
 import christmas.domain.Calender;
 import christmas.domain.Menu;
 import christmas.domain.OrderItem;
+import christmas.domain.benefit.BenefitCategory;
 import java.util.List;
 
 public class WeekendBenefit extends BenefitItem {

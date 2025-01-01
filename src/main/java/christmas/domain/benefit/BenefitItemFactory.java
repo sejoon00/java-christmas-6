@@ -2,6 +2,12 @@ package christmas.domain.benefit;
 
 import christmas.domain.Calender;
 import christmas.domain.Menu;
+import christmas.domain.benefit.benefitItems.BenefitItem;
+import christmas.domain.benefit.benefitItems.ChristmasBenefit;
+import christmas.domain.benefit.benefitItems.GiftBenefit;
+import christmas.domain.benefit.benefitItems.SpecialBenefit;
+import christmas.domain.benefit.benefitItems.WeekdaysBenefit;
+import christmas.domain.benefit.benefitItems.WeekendBenefit;
 import java.util.ArrayList;
 import java.util.List;
 
