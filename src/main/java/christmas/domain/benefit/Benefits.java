@@ -11,7 +11,7 @@ public class Benefits {
     private List<BenefitItem> benefitItems;
 
     public Benefits(Calender calender, Order order) {
-        List<BenefitCategory> benefitCategory = BenefitCategory.getBenefitItems(calender, order);
+        List<BenefitCategory> benefitCategory = BenefitCategory.getAvailableBenefitItems(calender, order);
         this.benefitItems = BenefitItemFactory.createBenefitItems(benefitCategory, calender, order);
     }
 

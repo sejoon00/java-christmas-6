@@ -55,7 +55,7 @@ public enum BenefitCategory {
         return price;
     }
 
-    public static List<BenefitCategory> getBenefitItems(Calender calender, Order order) {
+    public static List<BenefitCategory> getAvailableBenefitItems(Calender calender, Order order) {
         List<BenefitCategory> benefitItems = new java.util.ArrayList<>(Arrays.stream(BenefitCategory.values())
                 .filter(benefitItem -> benefitItem.dateValidator.apply(calender.getDate()))
                 .toList());
