@@ -1,7 +1,7 @@
 package christmas.domain.benefit;
 
 import christmas.domain.Calender;
-import christmas.domain.Menu;
+import christmas.domain.Order;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -55,12 +55,12 @@ public enum BenefitCategory {
         return price;
     }
 
-    public static List<BenefitCategory> getBenefitItems(Calender calender, Menu menu) {
+    public static List<BenefitCategory> getBenefitItems(Calender calender, Order order) {
         List<BenefitCategory> benefitItems = new java.util.ArrayList<>(Arrays.stream(BenefitCategory.values())
                 .filter(benefitItem -> benefitItem.dateValidator.apply(calender.getDate()))
                 .toList());
 
-        if (menu.calculateTotalPrice() >= 120_000) {
+        if (order.calculateTotalPrice() >= 120_000) {
             benefitItems.add(증정이벤트);
         }
 

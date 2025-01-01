@@ -1,7 +1,7 @@
 package christmas.io;
 
 import christmas.domain.Calender;
-import christmas.domain.Menu;
+import christmas.domain.Order;
 import christmas.error.ErrorCode;
 import java.util.function.Supplier;
 
@@ -40,9 +40,9 @@ public class InputView implements AutoCloseable {
                 () -> new Calender(readLine()));
     }
 
-    public Menu inputMenu() {
+    public Order inputMenu() {
         return retryInput("주문하실 메뉴와 개수를 알려 주세요. (e.g. 해산물파스타-2,레드와인-1,초코케이크-1)",
-                () -> new Menu(readLine()));
+                () -> new Order(readLine()));
     }
 
 

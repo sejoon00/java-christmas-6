@@ -2,7 +2,7 @@ package christmas.io;
 
 import christmas.domain.benefit.Benefits;
 import christmas.domain.Calender;
-import christmas.domain.Menu;
+import christmas.domain.Order;
 import christmas.domain.OrderItem;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
@@ -19,27 +19,27 @@ public class OutputView {
         System.out.println(date.getMonth().getValue() + "월 " + date.getDayOfMonth() + "일에 우테코 식당에서 받을 이벤트 혜택 미리 보기! \n");
     }
 
-    public static void printOrderMenu(Menu menu) {
+    public static void printOrderMenu(Order order) {
         System.out.println("<주문 메뉴>");
-        List<OrderItem> orderItems = menu.getOrderItems();
+        List<OrderItem> orderItems = order.getOrderItems();
         orderItems.forEach(
                 orderItem -> System.out.println(orderItem.getName() + " " + orderItem.getOrderCount() + "개")
         );
         System.out.println();
     }
 
-    public static void printTotalPrice(Menu menu) {
-        int totalPrice = menu.calculateTotalPrice();
+    public static void printTotalPrice(Order order) {
+        int totalPrice = order.calculateTotalPrice();
         DecimalFormat df = new DecimalFormat("###,###");
         System.out.println("<할인 전 총주문 금액>");
         System.out.println(df.format(totalPrice) + "원\n");
     }
 
-    public static void printBenefit(Menu menu, Benefits benefits){
+    public static void printBenefit(Order order, Benefits benefits){
         printGiftBenefit(benefits);
         printBenefits(benefits);
         printTotalDiscountPrice(benefits);
-        printAfterDiscountPrice(menu, benefits);
+        printAfterDiscountPrice(order, benefits);
         printBadge(benefits);
     }
 
@@ -66,8 +66,8 @@ public class OutputView {
         System.out.println("-" + df.format(totalDiscountPrice) + "원\n");
     }
 
-    public static void printAfterDiscountPrice(Menu menu, Benefits benefits) {
-        int afterDiscountPrice = menu.calculateTotalPrice() - benefits.getDiscountPrice();
+    public static void printAfterDiscountPrice(Order order, Benefits benefits) {
+        int afterDiscountPrice = order.calculateTotalPrice() - benefits.getDiscountPrice();
         DecimalFormat df = new DecimalFormat("###,###");
         System.out.println("<할인 후 예상 결제 금액>");
         System.out.println(df.format(afterDiscountPrice) + "원\n");

@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Menu {
+public class Order {
 
     private final String DELIMITER = ",";
     private final List<OrderItem> orderItems;
 
-    public Menu(String menuInputs) {
-        this.orderItems = createMenuItems(menuInputs);
+    public Order(String orderInputs) {
+        this.orderItems = createOrderItems(orderInputs);
     }
 
     public List<OrderItem> getOrderItems() {
@@ -25,8 +25,8 @@ public class Menu {
                 .sum();
     }
 
-    private List<OrderItem> createMenuItems(String menuInputs) {
-        List<OrderItem> orderItems = Arrays.stream(menuInputs.split(DELIMITER))
+    private List<OrderItem> createOrderItems(String orderInputs) {
+        List<OrderItem> orderItems = Arrays.stream(orderInputs.split(DELIMITER))
                 .map(OrderItem::new)
                 .toList();
         validateDuplication(orderItems);

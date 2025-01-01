@@ -2,7 +2,7 @@ package christmas;
 
 import christmas.domain.benefit.Benefits;
 import christmas.domain.Calender;
-import christmas.domain.Menu;
+import christmas.domain.Order;
 import christmas.io.InputView;
 import christmas.io.OutputView;
 
@@ -13,12 +13,12 @@ public class Application {
 
         try (InputView inputView = new InputView()) {
             Calender calender = inputView.inputDate();
-            Menu menu = inputView.inputMenu();
+            Order order = inputView.inputMenu();
             OutputView.printEventMessage(calender);
-            OutputView.printOrderMenu(menu);
-            OutputView.printTotalPrice(menu);
-            Benefits benefits = new Benefits(calender, menu);
-            OutputView.printBenefit(menu, benefits);
+            OutputView.printOrderMenu(order);
+            OutputView.printTotalPrice(order);
+            Benefits benefits = new Benefits(calender, order);
+            OutputView.printBenefit(order, benefits);
         }
 
     }

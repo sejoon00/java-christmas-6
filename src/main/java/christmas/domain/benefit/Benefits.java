@@ -1,7 +1,7 @@
 package christmas.domain.benefit;
 
 import christmas.domain.Calender;
-import christmas.domain.Menu;
+import christmas.domain.Order;
 import christmas.domain.benefit.benefitItems.BenefitItem;
 import java.util.List;
 
@@ -10,9 +10,9 @@ public class Benefits {
     public static final int GIFT_PRICE = 25_000;
     private List<BenefitItem> benefitItems;
 
-    public Benefits(Calender calender, Menu menu) {
-        List<BenefitCategory> benefitCategory = BenefitCategory.getBenefitItems(calender, menu);
-        this.benefitItems = BenefitItemFactory.createBenefitItems(benefitCategory, calender, menu);
+    public Benefits(Calender calender, Order order) {
+        List<BenefitCategory> benefitCategory = BenefitCategory.getBenefitItems(calender, order);
+        this.benefitItems = BenefitItemFactory.createBenefitItems(benefitCategory, calender, order);
     }
 
     public List<BenefitItem> getBenefitItems() {
